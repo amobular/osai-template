@@ -1,3 +1,4 @@
+import logging
 from typing import List
 
 import hydra
@@ -10,7 +11,8 @@ from src.model.module import get_module
 
 
 def get_callbacks(cfg: CallbacksConfig) -> List[Callback]:
-    raise NotImplementedError()
+    logging.warning(f"Function 'get_callbacks' is still the example, remove this line if you have implemented it.")
+    return []
 
 
 def train(cfg: TrainConfig):
@@ -18,7 +20,7 @@ def train(cfg: TrainConfig):
     module = get_module(module_cfg=cfg.module)
 
     trainer = L.Trainer(
-        callbacks=get_callbacks(),
+        callbacks=get_callbacks(cfg.callbacks),
         **cfg.trainer,
     )
 

@@ -1,6 +1,6 @@
 enable_progress_bar: true
 max_epochs: 50
-accelerator: "gpu"
+accelerator: "auto"
 enable_checkpointing: true
 check_val_every_n_epoch: 1
 gradient_clip_val: 1.0

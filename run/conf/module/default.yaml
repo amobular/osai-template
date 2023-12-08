@@ -1,3 +1,8 @@
 defaults:
   - _self_
   - model: default
+  - loss: default
+
+learning_rate: 0.001
+weight_decay: 0.0
+warmup_percentage: 0.1  # 10% warmup.

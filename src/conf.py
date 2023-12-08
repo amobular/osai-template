@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Dict, Any
 
 
 @dataclass
@@ -24,17 +25,24 @@ class TrainConfig:
     dataset: DatasetConfig
     dataloader: DataloaderConfig
     module: ModuleConfig
+    callbacks: CallbacksConfig
     trainer: TrainerConfig
 
 
 @dataclass
 class DatasetConfig:
-    pass
+    params: Dict[str, Any]
+    train_params: Dict[str, Any]
+    val_params: Dict[str, Any]
+    test_params: Dict[str, Any]
 
 
 @dataclass
 class DataloaderConfig:
-    pass
+    params: Dict[str, Any]
+    train_params: Dict[str, Any]
+    val_params: Dict[str, Any]
+    test_params: Dict[str, Any]
 
 
 @dataclass
@@ -44,18 +52,23 @@ class CallbacksConfig:
 
 @dataclass
 class ModuleConfig:
+    learning_rate: float
+    weight_decay: float
+    warmup_percentage: float
     model: ModelConfig
     loss: LossConfig
 
 
 @dataclass
 class ModelConfig:
-    type: str
+    name: str
+    params: Dict[str, Any]
 
 
 @dataclass
 class LossConfig:
-    type: str
+    name: str
+    params: Dict[str, Any]
 
 
 @dataclass

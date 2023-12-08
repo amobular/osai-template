@@ -1,0 +1,5 @@
+params:
+  batch_size: 32
+train_params: {}
+val_params: {}
+test_params: {}
