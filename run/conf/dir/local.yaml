@@ -1,0 +1,4 @@
+data_dir: "./data"
+processed_dir: "./data/processed"
+model_dir: "./checkpoints"
+output_dir: "./output"

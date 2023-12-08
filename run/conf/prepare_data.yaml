@@ -1,0 +1,6 @@
+defaults:
+  - _self_
+  - dir: local
+
+competition_name: "example-competition"
+download: true
