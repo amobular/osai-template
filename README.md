@@ -15,3 +15,10 @@ The template contains basic code, that will be needed for (almost) every ML proj
 - Easy dataset downloading and preparation for Kaggle competitions
 
 For simple instructions on how to use this template, refer to the tutorials in the `docs` directory.
+
+## Running scripts
+Scripts should be implemented in the `run` directory, and other code in the `src` directory. Running a script (in this
+example `train.py`) can be done by running the following command from the base directory:
+```shell
+python -m run.train
+```
