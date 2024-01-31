@@ -17,7 +17,7 @@ def register_loss(namespace: Union[str, List[str]]):
         namespace = [namespace]
 
     def wrapper(loss_cls: type):
-        if not isinstance(losse_cls, type):
+        if not isinstance(loss_cls, type):
             raise ValueError(f"Trying to register something other than a PyTorch loss. Type: '{type(loss_cls)}'")
         _registered_losses.append((namespace, loss_cls))
         return loss_cls
