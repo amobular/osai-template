@@ -50,13 +50,13 @@ class GeneralModule(LightningModule):
         return {"loss": loss, "x_hat": x_hat}
 
     def training_step(self, batch):
-        self.shared_step(batch, step_type="train")
+        return self.shared_step(batch, step_type="train")
 
     def validation_step(self, batch):
-        self.shared_step(batch, step_type="val")
+        return self.shared_step(batch, step_type="val")
 
     def test_step(self, batch):
-        self.shared_step(batch, step_type="test")
+        return self.shared_step(batch, step_type="test")
 
     def configure_optimizers(self) -> OptimizerLRScheduler:
         param_groups = set_weight_decay(
